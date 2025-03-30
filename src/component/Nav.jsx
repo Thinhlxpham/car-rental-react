@@ -1,48 +1,81 @@
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
 import NavLogo from "../assets/logo.png";
 
 const Nav = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <nav>
-     
-      <div className="nav_container">
-        <a href="" className="nav_image_wrapper">
-          <img src={NavLogo} alt="" className="nav_image" />
-        </a>
-        <div className="nav_links">
-          <a href="#" className="nav_link">
+    <>
+      <nav>
+        <div className="nav__container">
+          <a href="" className="nav__img__wrapper">
+            <img src={NavLogo} alt="" className="nav__img" />
+          </a>
+          <div className="nav__links">
+            <a href="#" className="nav__link">
+              Home
+            </a>
+            <a href="#" className="nav__link">
+              Vehicle Model
+            </a>
+            <a href="#" className="nav__link disabled">
+              Testimonial
+            </a>
+            <a href="#" className="nav__link disabled">
+              Our Team
+            </a>
+            <a href="#" className="nav__link disabled">
+              Contact
+            </a>
+          </div>
+          <div className="nav__btns">
+            <a href="" className="nav__link disabled">
+              Sign In
+            </a>
+            <button className="nav__btns__register disabled">Register</button>
+          </div>
+          <button className="nav__menu" onClick={() => setMenuOpen(true)}>
+            <FontAwesomeIcon icon={faBars} />
+          </button>
+        </div>
+      </nav>
+
+      <nav className={`menu ${menuOpen === true && "menu-open"}`}>
+        <button className="menu__close" onClick={() => setMenuOpen(false)}>
+          <FontAwesomeIcon icon={faTimes} />
+        </button>
+        <div className="menu__links">
+          <a href="" className="menu__link" onClick={() => setMenuOpen(false)}>
             Home
           </a>
-          <a href="#" className="nav_link">
+          <a href="" className="menu__link" onClick={() => setMenuOpen(false)}>
             Vehicle Model
           </a>
-          <a href="#" className="nav_link disable">
+          <a
+            href=""
+            className="menu__link disabled"
+            onClick={() => setMenuOpen(false)}
+          >
             Testimonial
           </a>
-          <a href="#" className="nav_link disable">
+          <a
+            href=""
+            className="menu__link disabled"
+            onClick={() => setMenuOpen(false)}
+          >
             Our Team
           </a>
-          <a href="#" className="nav_link disable">
+          <a
+            href=""
+            className="menu__link disabled"
+            onClick={() => setMenuOpen(false)}
+          >
             Contact
           </a>
         </div>
-        <div className="nav_btns">
-          <a href="" className="nav_link disable">
-            Sign In
-          </a>
-          <button className="nav_btns_register disable">
-            Register
-          </button>
-        </div>
-        <button className="nav_menu">
-          <FontAwesomeIcon icon={faBars}/>
-        </button>
-      </div>
-  
-    </nav>
-  
+      </nav>
+    </>
   );
 };
 export default Nav;

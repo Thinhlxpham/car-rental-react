@@ -198,7 +198,7 @@ header {
   position: absolute;
   right: 0;
   top: 0;
-  z-index: 1;
+  z-index: 0;
 }
 
 .header__text {
@@ -297,10 +297,12 @@ header {
 .features__subtitle {
   font-size: 24px;
   font-weight: 600;
+  z-index: 1;
 }
 
 .features__title {
   font-size: 42px;
+  z-index: 1;
 }
 
 .features__list {
