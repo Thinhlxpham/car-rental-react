@@ -1,8 +1,6 @@
 import React from "react";
 import Testimonial1 from "../assets/testimonial-1.jpg";
 import Testimonial2 from "../assets/testimonial-2.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import TestimonialInfo from "./ui/TestimonialInfo";
 
 const Testimonial = () => {

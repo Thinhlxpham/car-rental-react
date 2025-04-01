@@ -2,6 +2,7 @@ import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import NavLogo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,23 +10,23 @@ const Nav = () => {
     <>
       <nav>
         <div className="nav__container">
-          <a href="" className="nav__img__wrapper">
+          <Link to="/" className="nav__img__wrapper">
             <img src={NavLogo} alt="" className="nav__img" />
-          </a>
+          </Link>
           <div className="nav__links">
-            <a href="#" className="nav__link">
+            <Link to="/" className="nav__link">
               Home
-            </a>
-            <a href="#" className="nav__link">
+            </Link>
+            <Link to="/models" className="nav__link">
               Vehicle Model
-            </a>
-            <a href="#" className="nav__link disabled">
+            </Link>
+            <a href="/" className="nav__link disabled">
               Testimonial
             </a>
-            <a href="#" className="nav__link disabled">
+            <a href="/" className="nav__link disabled">
               Our Team
             </a>
-            <a href="#" className="nav__link disabled">
+            <a href="/" className="nav__link disabled">
               Contact
             </a>
           </div>
